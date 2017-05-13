@@ -137,10 +137,11 @@ int main()
 	{
 		boost::asio::io_service io_service;
 		tcp::resolver resolver(io_service);
-		auto endpoint_iterator = resolver.resolve({ boost::asio::ip::address::from_string("192.168.125.165"), 1500 });
+		auto endpoint_iterator = resolver.resolve({ boost::asio::ip::address::from_string("127.0.0.1"), 1500 });
 		chat_client c(io_service, endpoint_iterator);
 		string name;
 		char name2[20];
+		cout <<"Enter the name "<<endl;
 		getline(cin, name);
 		strcpy(name2, name.c_str());
 		strcat(name2, ": ");
